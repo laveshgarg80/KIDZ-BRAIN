@@ -1182,14 +1182,14 @@ a {
     font-size: 24px;
     font-weight: bold;
     line-height: normal;
-    color: #000000;
+    color: rgb(124, 184, 197);
     letter-spacing: 0px;
     transition: ease all 0.5s;
     
 }
 
 header .main_menu .nav-item.active a.nav-link {
-    color: #000000 !important;
+    color: rgb(124, 184, 197) !important;
 }
 
 .dropdown-toggle::after {
