@@ -286,6 +286,7 @@ button.navbar-toggler span:nth-child(1) {
 /** small screen **/
 
 @media (min-width: 768px) and (max-width: 991px) {
+    
     .site_information {
         display: none;
     }
@@ -442,7 +443,7 @@ button.navbar-toggler span:nth-child(1) {
     background-position: center center !important;
 }
 
-}
+}  
 
 
 /** tablet screen **/
