@@ -4783,11 +4783,12 @@ form#commant_form div.field textarea.custom_field {
   font-size: 24px;
   cursor: pointer;
   z-index: 10;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
   transition: all 0.3s ease;
 }
 
 .testimonial-arrow:hover {
+  background: #667eea;
   color: #ffffff;
   transform: translateY(-50%) scale(1.1);
 }
