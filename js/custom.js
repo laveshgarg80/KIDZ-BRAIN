@@ -127,4 +127,63 @@ $(document).ready(function () {
 
 });
 
+/**************************************
+MARQUEE PAUSE/RESUME ON HOVER
+**************************************/
+$(document).ready(function() {
+  $('.marquee-container').on('mouseenter', function() {
+    $(this).find('.marquee-wrapper').css('animation-play-state', 'paused');
+  });
+  
+  $('.marquee-container').on('mouseleave', function() {
+    $(this).find('.marquee-wrapper').css('animation-play-state', 'running');
+  });
+});
 
+/**************************************
+TESTIMONIAL CAROUSEL
+**************************************/
+let currentTestimonialIndex = 0;
+
+function showTestimonial(index) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    
+    if (index >= slides.length) {
+        currentTestimonialIndex = 0;
+    } else if (index < 0) {
+        currentTestimonialIndex = slides.length - 1;
+    } else {
+        currentTestimonialIndex = index;
+    }
+    
+    // Hide all slides and remove active class from all dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Show current slide and activate corresponding dot
+    if (slides[currentTestimonialIndex]) {
+        slides[currentTestimonialIndex].classList.add('active');
+    }
+    if (dots[currentTestimonialIndex]) {
+        dots[currentTestimonialIndex].classList.add('active');
+    }
+}
+
+function moveTestimonial(direction) {
+    showTestimonial(currentTestimonialIndex + direction);
+}
+
+function currentTestimonial(index) {
+    showTestimonial(index);
+}
+
+// Auto-advance testimonials every 5 seconds
+setInterval(function() {
+    moveTestimonial(1);
+}, 20000);
+
+// Initialize first testimonial
+document.addEventListener('DOMContentLoaded', function() {
+    showTestimonial(0);
+});
